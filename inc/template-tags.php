@@ -414,6 +414,10 @@ function social_menu() {
 	$menu_id    = $menus['social'];
 	$menu_items = wp_get_nav_menu_items( $menu_id );
 
+	if ( ! $menu_items ) {
+		return;
+	}
+
 	require_once ACORN_THEME_PATH . '/inc/social-icons.php';
 
 	// Social media SVG icons.
