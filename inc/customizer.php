@@ -111,7 +111,7 @@ function customize_register( $wp_customize ) {
 		'search_toggle',
 		array(
 			'type'    => 'checkbox',
-			'label'   => __( 'Hide Search Button and Form Globally?', 'acorn-theme' ),
+			'label'   => __( 'Show Search Button and Form Globally?', 'acorn-theme' ),
 			'section' => 'acorn_theme_search_section',
 		)
 	);
