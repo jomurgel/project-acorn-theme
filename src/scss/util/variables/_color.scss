@@ -1,0 +1,61 @@
+//--------------------------------------------------------------
+// Colors
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Variables
+//-----------------------------------------
+$angle: 45deg;
+
+//-----------------------------------------
+// Colors
+//-----------------------------------------
+
+// Primary.
+$color-primary:   rgba(215, 4, 107, 1);
+
+// Secondary.
+$color-secondary: rgba(254, 79, 69, 1);
+
+// Tertiary.
+$color-tertiary:  rgba(144, 10, 170, 1);
+
+// Accent.
+$color-accent:    rgba(49, 191, 199, 1);
+
+//-----------------------------------------
+// Neutrals
+//-----------------------------------------
+$color-white:      rgba(255, 255, 255, 1);
+$color-black:      rgba(1, 1, 1, 1);
+$color-light-gray: rgba(241, 246, 250, 1);
+$color-mid-gray:   rgba(194, 203, 207, 1);
+$color-true-gray:  rgba(146, 152, 153, 1);
+$color-dark-gray:  rgba(42, 55, 64, 1);
+
+//-----------------------------------------
+// Gradients
+//-----------------------------------------
+
+// Primary;
+$gradient-primary:   linear-gradient($angle, rgba(254, 79, 69, 1), rgba(215, 4, 107, 1));
+
+// Secondary.
+$gradient-secondary: linear-gradient($angle, rgba(215, 4, 107, 1), rgba(144, 10, 170, 1));
+
+// Accent.
+$gradient-accent:    linear-gradient($angle, rgba(49, 191, 199, 1), rgba(179, 48, 205, 1));
+
+// Buttons
+$gradient-button:    linear-gradient($angle, $color-primary, $color-secondary, $color-tertiary, $color-accent);
+
+// Facebook share button.
+$gradient-facebook:  linear-gradient($angle, rgba(59, 89, 151, 1), rgba(0, 132, 255, 1), rgba(43, 161, 231, 1), rgba(34, 194, 221, 1));
+
+// Twitter share button.
+$gradient-twitter:   linear-gradient($angle, rgba(29, 161, 241, 1), rgba(64, 123, 240, 1), rgba(105, 80, 238, 1), rgba(150, 30, 235, 1));
+
+//-----------------------------------------
+// Box Shadows
+//-----------------------------------------
+$box-shadow: 0 0 $gutter 0 rgba(0, 0, 0, 0.04);

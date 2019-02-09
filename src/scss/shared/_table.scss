@@ -1,0 +1,83 @@
+//--------------------------------------------------------------
+// Responsive Tables
+//--------------------------------------------------------------
+//-----------------------------------------
+// Tables
+//-----------------------------------------
+table {
+	@include margin(0 0 $gutter / 2);
+
+	border-collapse: collapse;
+	padding: 0;
+	width: 100%;
+
+	@include media($tablet-small) {
+		border: 1px solid $color-mid-gray;
+	}
+
+	caption {
+		border: 1px solid $color-mid-gray;
+		border-bottom: 0;
+		font-weight: 600;
+		padding: 10px;
+	}
+
+	thead {
+		display: none;
+
+		@include media($tablet-small) {
+			display: table-header-group;
+		}
+	}
+
+	tr {
+		border: 1px solid $color-mid-gray;
+		border-bottom: 2px solid $color-mid-gray;
+		display: block;
+		margin-bottom: 10px;
+		padding: 5px;
+
+		@include media($tablet-small) {
+			border: 1px solid $color-mid-gray;
+			display: table-row;
+			margin-bottom: 0;
+		}
+	}
+
+	td {
+		border-bottom: 1px dotted $color-mid-gray;
+		display: block;
+		text-align: left;
+
+
+		@include media($tablet-small) {
+			border-bottom: 0;
+			display: table-cell;
+			text-align: center;
+		}
+
+		&:last-child {
+			border-bottom: 0;
+		}
+
+		&::before {
+			content: attr(data-label);
+			float: left;
+			font-weight: 600;
+			text-transform: uppercase;
+		}
+	}
+
+	th,
+	td {
+		padding: 10px;
+		text-align: center;
+	}
+
+	th {
+		font-size: 80%;
+		font-weight: 600;
+		letter-spacing: 1px;
+		text-transform: uppercase;
+	}
+}

@@ -1,0 +1,35 @@
+//--------------------------------------------------------------
+// Editor Styles
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Import Global Elements
+//-----------------------------------------
+@import './global';
+@import './shared/table';
+
+//-----------------------------------------
+// Editor Styles
+//-----------------------------------------
+.editor-post-title__block .editor-post-title__input {
+	font-family: 'Nunito Sans', sans-serif;
+	font-size: 65px;
+}
+
+// Reset to remove Block duping our styles. :(
+.editor-block-list__block-edit .wp-block-preformatted,
+.editor-block-list__block-edit .wp-block-verse {
+	background: none;
+	border: 0;
+	border-radius: 0;
+	margin: 0;
+	padding: 0;
+}
+
+.editor-block-list__block[data-align='wide'] {
+	max-width: 90%;
+}
+
+.editor-block-list__block[data-align='full'] {
+	max-width: none;
+}

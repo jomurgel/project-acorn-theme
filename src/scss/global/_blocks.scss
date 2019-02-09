@@ -1,0 +1,250 @@
+//--------------------------------------------------------------
+// WordPress Blocks — Aka Goots™ Blocks.
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Dependencies
+//-----------------------------------------
+@import '../shared/alignment';
+
+//-----------------------------------------
+// Paragraph Classes
+//-----------------------------------------
+p {
+
+	&.has-large-font-size {
+		margin-bottom: 0;
+	}
+}
+
+//-----------------------------------------
+// Images
+//-----------------------------------------
+.wp-block-image,
+.wp-block-cover {
+	@include alignments;
+	@include margin($gutter / 2 null $gutter);
+
+	display: inline-flex;
+
+	//-----------------------------------------
+	// Paralax Effect
+	//-----------------------------------------
+	&.has-parallax {
+		background-attachment: fixed;
+		background-position: 0 0;
+
+		@include media($tablet-large) {
+			background-position: calc(50vw - #{$gutter}) 0;
+		}
+	}
+
+	//-----------------------------------------
+	// Cover Text
+	//-----------------------------------------
+	.wp-block-cover-text {
+		@extend .container;
+	}
+}
+
+//-----------------------------------------
+// Gallery & Embeds
+//-----------------------------------------
+.wp-block-gallery,
+.wp-block-embed {
+	@include alignments;
+	@include margin(0 null $gutter);
+}
+
+//-----------------------------------------
+// Button
+//-----------------------------------------
+.wp-block-button {
+	@include margin(0 null $gutter / 2);
+
+	&__link {
+		@include button('solid');
+	}
+
+	&.is-style-outline {
+
+		.wp-block-button__link {
+			@include button('outline');
+		}
+	}
+
+	&.is-style-squared {
+
+		.wp-block-button__link {
+			@include button('solid');
+
+			border-radius: 0;
+		}
+	}
+}
+
+//-----------------------------------------
+// Preformatted Text
+//-----------------------------------------
+.wp-block-preformatted,
+.wp-block-verse,
+pre.wp-block-verse {
+	@extend pre;
+}
+
+//-----------------------------------------
+// Separator
+//-----------------------------------------
+.wp-block-separator {
+	border-bottom-color: $color-light-gray;
+}
+
+//-----------------------------------------
+// Blockquote
+//-----------------------------------------
+.wp-block-quote:not(.is-large):not(.is-style-large) {
+	@extend blockquote;
+}
+
+.wp-block-pullquote {
+	@include alignments;
+	@include margin(0 null $gutter / 2);
+
+	border-color: $color-mid-gray;
+	border-radius: 0;
+
+	blockquote {
+		border: 0;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+//-----------------------------------------
+// Tables
+//-----------------------------------------
+.wp-block-table {
+	@extend table;
+
+	td {
+		border: 0;
+
+		@include media($tablet-small) {
+			border: 1px dotted $color-mid-gray;
+		}
+	}
+}
+
+//-----------------------------------------
+// Media Text Block & Columns
+//-----------------------------------------
+.wp-block-media-text {
+	@include alignments;
+	@include margin(0 null $gutter / 2);
+
+	display: block;
+
+	@include media($tablet-small) {
+		display: grid;
+	}
+
+	//-----------------------------------------
+	// Media/Text.
+	//-----------------------------------------
+	.wp-block-media-text {
+
+		&__media {
+			margin-bottom: $gutter / 4;
+
+			@include media($tablet-small) {
+				margin-bottom: 0;
+			}
+		}
+
+		&__content {
+			padding: 0;
+
+			@include media($tablet-small) {
+				@include padding(0 8%);
+			}
+		}
+
+		&__media,
+		&__content {
+			width: 100%;
+
+			@include media($tablet-small) {
+				width: auto;
+			}
+		}
+	}
+}
+
+.wp-block-columns {
+	@include alignments;
+	@include margin(0 null $gutter / 2);
+
+	//-----------------------------------------
+	// Two-column.
+	//-----------------------------------------
+	&.has-2-columns {
+
+		.wp-block-column {
+			margin-bottom: $gutter / 2;
+			width: 100%;
+
+			@include media($tablet-small) {
+				width: auto;
+			}
+
+			&:last-of-type {
+				margin-bottom: 0;
+				margin-left: 0;
+
+				@include media($tablet-large) {
+					margin-left: $gutter / 3;
+				}
+			}
+		}
+	}
+}
+
+//-----------------------------------------
+// Latest Posts
+//-----------------------------------------
+.wp-block-latest-posts {
+	@include alignments;
+	@include margin(0 null $gutter / 2);
+
+	&.is-grid {
+
+		li {
+			@include padding($gutter / 4);
+
+			border: 1px solid $color-light-gray;
+			border-radius: $radius;
+			display: flex;
+			flex-flow: column nowrap;
+
+			a {
+				@include links('dark');
+
+				font-size: 20px;
+				font-style: normal;
+				line-height: 1.25;
+				margin-bottom: 30px;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	&__post-date {
+		margin-top: auto;
+	}
+}
+

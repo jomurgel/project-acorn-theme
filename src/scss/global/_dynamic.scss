@@ -1,0 +1,61 @@
+//--------------------------------------------------------------
+// Dynamic Elements
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Dependencies.
+//-----------------------------------------
+@import '../shared/links';
+
+//-----------------------------------------
+// Images
+//-----------------------------------------
+img,
+svg {
+	border-radius: $radius;
+	height: auto;
+	max-width: 100%;
+	vertical-align: middle;
+}
+
+//-----------------------------------------
+// Links
+// Ignore admin bar.
+//-----------------------------------------
+a:not(.ab-item),
+a:visited {
+	@include links;
+} // a
+
+//-----------------------------------------
+// Screen Reader Elements
+// Text only meant for screen readers.
+//-----------------------------------------
+a.screen-reader-text {
+	@include padding(15px);
+	@include position(absolute, 0 null null -999px);
+	@include size(0, 0);
+
+	font-style: normal;
+	overflow: hidden;
+	text-decoration: none;
+	z-index: -999;
+
+	&:focus {
+		@include size(auto, auto);
+
+		background-color: $color-white;
+		color: $color-black;
+		left: 0;
+		top: 0;
+		z-index: 999;
+	}
+}
+
+//-----------------------------------------
+// Do not show the outline on the
+// skip link target.
+//-----------------------------------------
+#site-content[tabindex='-1']:focus {
+	outline: 0;
+}

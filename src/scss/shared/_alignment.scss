@@ -1,0 +1,37 @@
+//--------------------------------------------------------------
+// Alignments
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Mixin
+//-----------------------------------------
+@mixin alignments {
+
+	&.alignwide {
+		border-radius: $radius;
+		max-width: 100vw; // Ensure we're outside defaults.
+		width: 100%;
+
+		@include media($tablet-large) {
+			margin-left: 50%;
+			transform: translateX(-50%);
+			width: calc(100vw - 75%);
+		}
+	}
+
+	&.alignfull {
+		border-radius: 0;
+		max-width: 100vw; // Ensure we're outside defaults.
+		width: 100%;
+
+		@include media($tablet-large) {
+			margin-left: 50%;
+			transform: translateX(-50%);
+			width: calc(100vw - #{$gutter * 2});
+		}
+
+		img {
+			border-radius: 0;
+		}
+	}
+}

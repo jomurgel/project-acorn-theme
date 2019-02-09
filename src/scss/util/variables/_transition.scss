@@ -1,0 +1,63 @@
+//--------------------------------------------------------------
+// Transitions
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Init Variables
+//-----------------------------------------
+$speed:      0.2s;
+$speed-slow: 0.5s;
+$ease:       ease-in-out;
+
+//-----------------------------------------
+// Transition Types
+//-----------------------------------------
+$background: background $speed-slow $ease;
+$border:     border $speed $ease;
+$color:      color $speed $ease;
+$height:     height $speed $ease;
+$left:       left $speed $ease;
+$margin:     margin $speed $ease;
+$opacity:    opacity $speed $ease;
+$outline:    outline $speed $ease;
+$padding:    padding $speed $ease;
+$right:      right $speed $ease;
+$shadow:     box-shadow $speed $ease;
+$transform:  transform  $speed $ease;
+$width:      width $speed $ease;
+
+//-----------------------------------------
+// Set Individual
+//-----------------------------------------
+$transition-background: $background;
+$transition-border:     $border;
+$transition-box-shadow: $shadow;
+$transition-color:      $color;
+$transition-height:     $height;
+$transition-left:       $left;
+$transition-margin:     $margin;
+$transition-opacity:    $opacity;
+$transition-outline:    $outline;
+$transition-padding:    $padding;
+$transition-right:      $right;
+$transition-transform:  $transform;
+$transition-width:      $width;
+
+//-----------------------------------------
+// Set Variables for Elements
+//-----------------------------------------
+
+// Button transition.
+$transition-button: $transition-background, $transition-border, $transition-color;
+
+// Link transition.
+$transition-links: $transition-color, $transition-outline;
+
+// Menu transition.
+$transition-menu: $transition-left, $transition-margin, $transition-opacity, $transition-padding, $transition-right;
+
+// Menu toggle transition.
+$transition-toggle: $transition-opacity, $transition-transform, $transition-width;
+
+// Search toggle transition.
+$transition-search: $transition-background, $transition-color, $transition-height, $transition-transform, $transition-width;

@@ -1,0 +1,60 @@
+//--------------------------------------------------------------
+// WordPress Element
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Dependencies
+//-----------------------------------------
+@import './blocks'; // The Goots™.
+
+//-----------------------------------------
+// Images
+//-----------------------------------------
+figure,
+.post-thumbnail {
+	@include margin(null 0);
+
+	border-radius: $radius;
+
+	figcaption {
+		@include margin($gutter / 4 auto 0);
+
+		font-size: 12px;
+		line-height: 18px;
+		max-width: 80%;
+		text-align: center;
+	}
+
+	&.alignleft {
+		@include margin(9px $gutter / 3 null 0); // compensate for line-height.
+
+		float: left;
+	}
+
+	&.alignright {
+		@include margin(9px 0 null $gutter / 3); // compensate for line-height.
+
+		float: right;
+	}
+
+	&.aligncenter {
+		@include margin(0 auto); // compensate for line-height.
+	}
+}
+
+//-----------------------------------------
+// WP Admin Bar Fix
+// Fix the admin bar on mobile.
+//-----------------------------------------
+#wpadminbar {
+	@include position(fixed, 0 null null 0);
+
+	transition: $transition-menu;
+
+	@include media($wp-admin-bar) {
+		margin-left: auto;
+		margin-top: 0;
+		top: 0;
+		width: 100%;
+	}
+}

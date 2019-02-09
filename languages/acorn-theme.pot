@@ -1,0 +1,110 @@
+# Copyright (C) 2019 acorn-theme
+# This file is distributed under the same license as the acorn-theme package.
+msgid ""
+msgstr ""
+"Project-Id-Version: acorn-theme\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: ../404.php:22
+msgid "Hmm. Well, it looks like the content you're looking for isn't available. That's a 404 error if anyone cares."
+msgstr ""
+
+#. translators: the number of comments
+#: ../comments.php:33
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: ../comments.php:42, ../comments.php:66
+msgid "Comment navigation"
+msgstr ""
+
+#: ../comments.php:45, ../comments.php:69
+msgid "Older Comments"
+msgstr ""
+
+#: ../comments.php:46, ../comments.php:70
+msgid "Newer Comments"
+msgstr ""
+
+#: ../comments.php:82
+msgid "Comments are closed."
+msgstr ""
+
+#: ../functions.php:62
+msgid "Primary Menu"
+msgstr ""
+
+#: ../functions.php:63
+msgid "Social Menu"
+msgstr ""
+
+#: ../functions.php:122
+msgid "Small"
+msgstr ""
+
+#: ../functions.php:123
+msgid "S"
+msgstr ""
+
+#: ../functions.php:128
+msgid "Normal"
+msgstr ""
+
+#: ../functions.php:129
+msgid "M"
+msgstr ""
+
+#: ../functions.php:134
+msgid "Large"
+msgstr ""
+
+#: ../functions.php:135
+msgid "L"
+msgstr ""
+
+#: ../functions.php:140
+msgid "Huge"
+msgstr ""
+
+#: ../functions.php:141
+msgid "XL"
+msgstr ""
+
+#: ../functions.php:152
+msgid "Dark Gray"
+msgstr ""
+
+#: ../functions.php:157
+msgid "Light Gray"
+msgstr ""
+
+#: ../functions.php:162
+msgid "White"
+msgstr ""
+
+#: ../header.php:26
+msgid "Skip to Content"
+msgstr ""
+
+#: ../header.php:36
+msgid "Primary Navigation"
+msgstr ""
+
+#: ../searchform.php:19
+msgid "To search this site, enter a search term"
+msgstr ""
+
+#: ../searchform.php:29
+msgid "Search"
+msgstr ""

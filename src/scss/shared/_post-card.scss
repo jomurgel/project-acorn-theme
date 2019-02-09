@@ -1,0 +1,139 @@
+//--------------------------------------------------------------
+// Post Card Mixin
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Dependencies
+//-----------------------------------------
+@import './button';
+@import './links';
+@import './post-meta';
+
+//-----------------------------------------
+// Mixin
+//-----------------------------------------
+@mixin post-card( $type: '' ) {
+
+	$thumb-margin: $gutter / 2;
+	$card-height:  90px;
+
+	//-----------------------------------------
+	// Variables
+	//-----------------------------------------
+	@if $type == 'search' {
+		$thumb-margin: $gutter / 4;
+		$card-height:  65px;
+	} @else {
+		$thumb-margin: $gutter / 2;
+		$card-height:  90px;
+	}
+
+	//-----------------------------------------
+	// Setup Global Elements.
+	//-----------------------------------------
+	.post {
+
+		&-card {
+			margin-bottom: $gutter;
+
+			// Standard cards only.
+			@if $type == '' {
+				&.sticky {
+					border-bottom: 1px solid $color-light-gray;
+					margin-bottom: $gutter;
+					padding-bottom: $gutter;
+				}
+			}
+		}
+
+		// Only standard cards.
+		@if $type == '' {
+			&-sticky {
+				@include button('solid', 'small', '');
+
+				margin-bottom: $gutter / 2;
+			}
+		}
+
+		// Post header.
+		&-header {
+			@include margin(0 0 $thumb-margin);
+
+			align-items: center;
+		}
+
+		// Thumbnail
+		&-thumbnail {
+			@include margin(0 0 $thumb-margin);
+			@include size($card-height);
+
+			background-color: $color-light-gray;
+			transition: $transition-opacity;
+
+			@include media($tablet-small) {
+				@include margin(0 $thumb-margin 0 0);
+			}
+
+			img {
+				height: 100%;
+				object-fit: cover;
+				width: 100%;
+			}
+
+			&:hover,
+			&:focus {
+				opacity: 0.6;
+			}
+		}
+
+		// Heading.
+		&-title {
+
+			@if $type == 'search' {
+				@extend h3;
+			}
+
+			@include margin(0);
+
+			flex: 0 0 100%;
+			font-weight: 600;
+			width: 100%; // IE 11.
+
+			@include media($tablet-small) {
+				flex: 0 0 auto;
+				width: calc(100% - #{$gutter + $card-height});
+			}
+		}
+
+		// Shared.
+		&-title,
+		&-meta {
+
+			a {
+				@include links('dark');
+			}
+		}
+
+		// Meta.
+		&-meta {
+			@include post-meta(600);
+		}
+
+		// If standard card.
+		@if $type == '' {
+
+			// Footer elements.
+			&-footer {
+
+				.read-more {
+
+					> a {
+						font-size: 25px;
+						font-weight: 600;
+						text-decoration: none;
+					}
+				}
+			}
+		}
+	}
+}

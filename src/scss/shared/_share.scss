@@ -1,0 +1,52 @@
+//--------------------------------------------------------------
+// Social Share Styles
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Dependencies
+//-----------------------------------------
+@import './button';
+
+//-----------------------------------------
+// Mixin
+//-----------------------------------------
+@mixin share() {
+
+	// ul.
+	.share-buttons {
+		@include margin($gutter 0 0);
+		@include padding($gutter / 3 0 0);
+
+		border-top: 1px solid $color-light-gray;
+		list-style: none;
+
+		@include media($tablet-small) {
+			@include padding($gutter 0 0);
+		}
+
+		// .share-button.
+		li {
+			display: inline-block;
+			font-size: 80%;
+			margin-right: 10px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			> .share-to {
+				font-size: 80%;
+				letter-spacing: 1px;
+				text-transform: uppercase;
+			}
+
+			&.facebook > a {
+				@include button('facebook', 'small');
+			}
+
+			&.twitter > a {
+				@include button('twitter', 'small');
+			}
+		}
+	}
+}

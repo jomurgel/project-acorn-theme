@@ -1,0 +1,29 @@
+//--------------------------------------------------------------
+// Layout Variables
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Default width of the spacers.
+// Halved for mobile.
+//-----------------------------------------
+$gutter:  75px;
+$spacing: 150px;
+
+//-----------------------------------------
+// Breakpoints
+//-----------------------------------------
+$container:        720px; // Container/wrapper.
+
+$container-offset: $container - $gutter / 3; // Accomodate right/left padding.
+
+$desktop:          1200px; // Standard desktop.
+
+$tablet-large:     1024px; // iPad Landscape.
+
+$wp-admin-bar:     783px; // WP Admin Bar breakpoint.
+
+$tablet-small:     768px; // iPad Portrait.
+
+$phone-large:      600px; // iPhone Plus Landscape
+
+$phone-small:      380px; // iPhone Portrait.

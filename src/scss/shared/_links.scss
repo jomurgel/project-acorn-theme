@@ -1,0 +1,51 @@
+//--------------------------------------------------------------
+// Links
+//--------------------------------------------------------------
+
+@mixin links( $type: '' ) {
+
+	@if $type == 'dark' {
+		color: $color-black;
+		font-style: normal;
+		text-decoration: none;
+
+		&:hover,
+		&:active {
+			color: $color-primary;
+		} // &:hover, &:active
+
+		&:focus {
+			color: $color-secondary;
+			outline: 1px dashed $color-black;
+		} //  &:focus
+	} @else if $type == 'mono' {
+		color: $color-mid-gray;
+		font-style: italic;
+
+		&:hover,
+		&:active {
+			color: $color-primary;
+		} // &:hover, &:active
+
+		&:focus {
+			color: $color-secondary;
+			outline: 1px dashed $color-black;
+		} //  &:focus
+	} @else {
+		color: $color-primary;
+		font-style: italic;
+		text-decoration: underline;
+
+		&:hover,
+		&:active {
+			color: $color-secondary;
+		} // &:hover, &:active
+
+		&:focus {
+			color: $color-tertiary;
+			outline: 1px dashed $color-black;
+		} //  &:focus
+	}
+
+	transition: $transition-links;
+}

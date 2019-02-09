@@ -1,0 +1,73 @@
+//--------------------------------------------------------------
+// Post Content Styles
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Variables
+//-----------------------------------------
+
+
+//-----------------------------------------
+// Dependencies
+//-----------------------------------------
+@import './links';
+@import './post-meta';
+@import './share';
+
+//-----------------------------------------
+// Mixin
+//-----------------------------------------
+@mixin post-content() {
+
+	.post {
+
+		// Heading.
+		&-title {
+			display: inline-block;
+		}
+
+		// Meta.
+		&-meta {
+			@include post-meta(300);
+
+			.posted-on {
+				display: inline-block;
+			}
+		}
+
+		// Categories list.
+		&-categories {
+			display: block;
+
+			@include media($tablet-small) {
+				display: inline-block;
+			}
+
+			a {
+				@include button('outline', 'small');
+
+				margin-bottom: 5px;
+			}
+
+			&::before {
+				display: block;
+
+				@include media($tablet-small) {
+					@include margin(0 16px);
+					@include size(50px, 1px);
+
+					background-color: $color-true-gray;
+					bottom: 5px;
+					content: '';
+					display: inline-block;
+					position: relative;
+				}
+			}
+		}
+
+		// Footer elements.
+		&-footer {
+			@include share();
+		}
+	}
+}

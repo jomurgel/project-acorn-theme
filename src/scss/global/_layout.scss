@@ -1,0 +1,175 @@
+//--------------------------------------------------------------
+// Layout Elements
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Dependencies
+//-----------------------------------------
+@import '../shared/links';
+@import '../shared/button';
+
+//-----------------------------------------
+// Body
+//-----------------------------------------
+body {
+	@include margin($gutter / 3);
+
+	background-color: $color-white;
+	left: 0;
+	overflow-x: hidden;
+	position: relative;
+	transition: $transition-menu;
+	width: calc(100% - #{$gutter / 1.5});
+
+	@include media($tablet-large) {
+		@include margin($gutter);
+
+		width: calc(100% - #{$gutter * 2});
+	}
+}
+
+//-----------------------------------------
+// Bound Container at $container width
+//-----------------------------------------
+.container {
+	@include margin(null auto);
+
+	max-width: $container;
+} // .container
+
+//-----------------------------------------
+// Site Layout Wrapper and Grid Elements
+// and Grid Layout Wrapper
+//-----------------------------------------
+.display-flex {
+	display: flex;
+	flex: 0 0 100%;
+	flex-flow: column nowrap;
+	width: 100%; // For IE11.
+
+	@include media($tablet-small) {
+		flex-flow: row wrap;
+	}
+
+	//-----------------------------------------
+	// Alignments
+	//-----------------------------------------
+	&.flex-start {
+		align-items: flex-start;
+	} // &.flex-start
+
+	&.align-center {
+		align-items: center;
+	} // &.align-center
+} // .site-wrapper, .display-flex
+
+//-----------------------------------------
+// Header
+//-----------------------------------------
+.site-header {
+	margin-bottom: $gutter;
+
+	@include media($tablet-small) {
+		margin-bottom: $spacing;
+	}
+
+	// Ensure h1 and p are styles similar in this case.
+	h1,
+	p {
+
+		&.site-title {
+			margin: 0;
+		}
+
+		a {
+			@include links('dark');
+		}
+	}
+}
+
+//-----------------------------------------
+// Footer
+//-----------------------------------------
+.site-footer {
+	@extend .container;
+
+	border-top: 1px solid $color-light-gray;
+	color: $color-mid-gray;
+	font-size: 90%;
+	margin-bottom: 10px;
+	margin-top: $gutter;
+	padding-top: $gutter / 3;
+	text-align: center;
+
+	@include media($tablet-small) {
+		padding-top: $gutter;
+	}
+
+	.copyright {
+		margin-bottom: $gutter / 2;
+
+		a {
+			@include links('mono');
+		}
+	}
+}
+
+//-----------------------------------------
+// Category List
+//-----------------------------------------
+.category-list {
+	@extend .container;
+
+	border-top: 1px solid $color-light-gray;
+	color: $color-black;
+	font-size: 90%;
+	margin-bottom: 10px;
+	margin-top: $gutter;
+	padding-top: $gutter / 3;
+
+	@include media($tablet-small) {
+		padding-top: $gutter;
+	}
+
+	ul {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		li {
+			@include margin(null 5px 10px 0);
+
+			display: inline-block;
+
+			a {
+				@include button('category');
+
+				font-weight: 600;
+				opacity: 0.5;
+				transition: $transition-opacity;
+
+				> span {
+					color: $color-accent;
+					font-weight: 300;
+				}
+
+				&:hover,
+				&:active {
+					opacity: 1;
+
+					> span {
+						color: $color-primary;
+					}
+				} // &:hover, &:active
+
+				&:focus {
+					opacity: 1;
+
+					> span {
+						color: $color-tertiary;
+					}
+				} //  &:focus
+			}
+		}
+	}
+}

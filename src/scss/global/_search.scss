@@ -1,0 +1,283 @@
+//--------------------------------------------------------------
+// Search Form Styles
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Variables
+//-----------------------------------------
+$search-gradient-large-focus: linear-gradient(100deg, $color-tertiary 8%, transparent 8%, transparent 71%, $color-tertiary 63%);
+$search-gradient-large-hover: linear-gradient(100deg, $color-primary 8%, transparent 8%, transparent 71%, $color-primary 63%);
+$search-gradient-large:       linear-gradient(100deg, $color-black 8%, transparent 8%, transparent 71%, $color-black 63%);
+$search-gradient-toggled:     linear-gradient(117deg, $color-black 16%, transparent 16%, transparent 83%, $color-black 63%);
+$search-gradient:             linear-gradient(100deg, $color-black 13%, transparent 13%, transparent 71%, $color-black 63%);
+
+//-----------------------------------------
+// Dependencies
+//-----------------------------------------
+@import './shared/button';
+@import './shared/input';
+
+//-----------------------------------------
+// Open Search
+//-----------------------------------------
+body {
+
+	//-----------------------------------------
+	// Open Menu
+	//-----------------------------------------
+	&.search-open {
+
+		.search-toggle {
+
+			> button {
+
+				&::before {
+					@include size($gutter / 2, $gutter / 2);
+
+					background-color: transparent;
+					border-width: 2px;
+				}
+
+				&::after {
+					@include size($gutter / 1.5, 2px);
+
+					background-image: $search-gradient-toggled;
+				}
+			}
+		}
+
+		// Target navigation wrapper.
+		.search-form-container {
+			opacity: 1;
+			visibility: visible;
+		}
+	} // &.menu-open
+} // body
+
+//-----------------------------------------
+// Search Button and Container
+//-----------------------------------------
+.search-toggle {
+	@include position(fixed, null $gutter / 3 $gutter / 3 null);
+	@include size($gutter / 2, $gutter / 2);
+
+	border: 0;
+	cursor: pointer;
+	opacity: 1;
+	outline: 1px solid transparent;
+	transition: $transition-outline, $transition-opacity;
+	z-index: 511;
+
+	@include media($tablet-large) {
+		@include position(fixed, null $gutter $gutter null);
+	}
+
+	// Actual toggle.
+	> button {
+		@include padding(0);
+		@include size($gutter / 2, $gutter / 2);
+
+		background-color: transparent;
+		border: 1px solid transparent;
+		border-radius: 0;
+		position: relative;
+
+		&:hover {
+
+			&::before {
+				transform: rotate(-45deg) rotateY(180deg);
+			}
+		}
+
+		&:focus {
+			border: 1px dashed $color-black;
+			outline: 0;
+		}
+
+		&::before {
+			@include position(absolute, -1px null null -1px);
+			@include size(32px);
+
+			background-color: transparent;
+			border: 2px solid $color-black;
+			border-radius: 100%;
+			content: '';
+			transition: $transition-search;
+			z-index: 1;
+		}
+
+		&::after {
+			@include position(absolute, 50% null null 50%);
+			@include size(50px, 2px);
+
+			background-image: $search-gradient;
+			content: '';
+			transform: rotate(45deg) translate(-50%, -48%);
+			transform-origin: left;
+			transform-style: preserve-3d;
+			transition: $transition-search;
+			transition-delay: 0.2s;
+			z-index: 0;
+		}
+	}
+}
+
+.search-form-container {
+	@include position(fixed, 0 null null 0);
+	@include size(100%);
+
+	align-items: center;
+	background-color: rgba($color-white, 0.85);
+	display: flex;
+	justify-content: center;
+	opacity: 0;
+	transition: $transition-opacity;
+	visibility: hidden;
+	z-index: 509;
+
+	> form {
+		position: relative;
+		width: calc(100% - #{$gutter / 1.5});
+		z-index: 510;
+
+		@include media($tablet-small) {
+			width: 80%;
+		}
+	}
+}
+
+.search-form {
+	align-items: flex-end;
+	display: flex;
+	flex-flow: row nowrap;
+
+	> label {
+		flex: 0 0 calc(100% - 50px);
+
+		@include media($tablet-small) {
+			flex: 0 0 calc(100% - 70px);
+		}
+	}
+
+	input[type='search'] {
+		@include padding($padding / 2 $padding);
+
+		appearance: none;
+		background-color: transparent;
+		border-color: $color-black;
+		border-style: solid;
+		border-width: 0 0 2px 0;
+		font-size: 200%;
+		width: 100%;
+
+		@include media($tablet-small) {
+			@include padding($padding $padding * 2);
+
+			font-size: 300%;
+		}
+
+		&::-webkit-search-decoration,
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-results-button,
+		&::-webkit-search-results-decoration {
+			display: none;
+		}
+
+		&::-webkit-input-placeholder {
+			opacity: 0;
+		}
+
+		&:-moz-placeholder {
+			opacity: 0;
+		}
+
+		&::-moz-placeholder {
+			opacity: 0;
+		}
+
+		&:-ms-input-placeholder {
+			opacity: 0;
+		}
+
+		&:focus {
+			outline: 0;
+		}
+	}
+
+	.button-search {
+		@include size(50px);
+
+		appearance: none;
+		background-color: transparent;
+		border: 1px solid transparent;
+		border-radius: 0;
+		display: inline-block;
+		font-size: 300%;
+		font-style: normal;
+		position: relative;
+		text-decoration: none;
+		transition: $transition-button;
+
+		@include media($tablet-small) {
+			@include size(70px);
+		}
+
+		&:hover {
+
+			&::before,
+			&::after {
+				border-color: $color-primary;
+			}
+
+			&::after {
+				background-image: $search-gradient-large-hover;
+			}
+		}
+
+		&:focus {
+			border: 1px dashed $color-black;
+			outline: 0;
+
+			&::before,
+			&::after {
+				border-color: $color-tertiary;
+			}
+
+			&::after {
+				background-image: $search-gradient-large-focus;
+			}
+		}
+
+		&::before {
+			@include position(absolute, 5% null null 5%);
+			@include size(32px);
+
+			background-color: transparent;
+			border: 2px solid $color-black;
+			border-radius: 100%;
+			content: '';
+			transition: $transition-search;
+			z-index: 1;
+
+			@include media($tablet-small) {
+				@include size(52px);
+			}
+		}
+
+		&::after {
+			@include position(absolute, 50% null null 50%);
+			@include size(50px, 2px);
+
+			background-image: $search-gradient-large;
+			content: '';
+			transform: rotate(45deg) translate(-50%, -48%);
+			transform-origin: left;
+			transition: $transition-search;
+			z-index: 0;
+
+			@include media($tablet-small) {
+				@include size(80px, 2px);
+			}
+		}
+	}
+}

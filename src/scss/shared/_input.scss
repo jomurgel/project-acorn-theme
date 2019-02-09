@@ -1,0 +1,99 @@
+//--------------------------------------------------------------
+// Inputs
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Variables
+//-----------------------------------------
+$padding: 5px;
+
+//-----------------------------------------
+// Input Mixin
+//-----------------------------------------
+@mixin input() {
+	@include padding($padding $padding * 2);
+
+	appearance: none;
+	border: 1px solid $color-mid-gray;
+	border-radius: $radius / 2;
+	width: 100%;
+
+	&::-webkit-search-decoration,
+	&::-webkit-search-cancel-button,
+	&::-webkit-search-results-button,
+	&::-webkit-search-results-decoration {
+		display: none;
+	}
+
+	&::-webkit-input-placeholder {
+		color: $color-mid-gray;
+		opacity: 1;
+	}
+
+	&::-moz-placeholder {
+		color: $color-mid-gray;
+		opacity: 1;
+	}
+
+	&:-moz-placeholder {
+		color: $color-mid-gray;
+		opacity: 1;
+	}
+
+	&:-ms-input-placeholder {
+		color: $color-mid-gray;
+	}
+
+	&:focus {
+		border-color: $color-black;
+		outline: 0;
+	}
+
+}
+
+//-----------------------------------------
+// Radio/Checkbox
+//-----------------------------------------
+input[type='checkbox'],
+input[type='radio'] {
+	@include margin(0 3px 0 0);
+	@include padding(rem(9));
+	@include size(21px);
+
+	appearance: none;
+	border: 1px solid $color-mid-gray;
+	border-radius: $radius;
+	outline: 0;
+	position: relative;
+	vertical-align: sub;
+}
+
+input[type='radio'] {
+	border-radius: 100%;
+}
+
+input[type='radio']:checked::after {
+	@include position(relative, 4px -4px null null);
+	@include size(11px);
+
+	background-color: $color-primary;
+	border-radius: 50%;
+	content: '';
+	display: block;
+}
+
+input[type='checkbox']:checked::after {
+	@include position(relative, 1px -5px null null);
+	@include size(8px, 15px); // Make it a small rectangle so the border will create an L-shape.
+
+	// Add a white border on the bottom and left, creating that 'L'.
+	border: solid $color-primary;
+	border-width: 0 4px 4px 0;
+
+	// Add another block-level blank space.
+	content: '';
+	display: block;
+
+	// Rotate the L 45 degrees to turn it into a checkmark.
+	transform: rotate(45deg);
+}

@@ -1,0 +1,136 @@
+//--------------------------------------------------------------
+// Button Styles
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Variables
+//-----------------------------------------
+$padding: 5px;
+
+//-----------------------------------------
+// Mixin
+//-----------------------------------------
+@mixin button( $style: '', $size: '', $type: 'button' ) {
+
+	@if $size == 'small' {
+		@include padding($padding / 2 $padding * 3);
+
+		font-size: 16px;
+	} @else {
+		@include padding($padding $padding * 5);
+
+		font-size: inherit;
+	}
+
+	appearance: none;
+	border: 1px solid $color-black;
+	border-radius: $radius * 100;
+	display: inline-block;
+	font-style: normal;
+	text-decoration: none;
+	transition: $transition-button;
+
+	@if $type == 'button' {
+		cursor: pointer;
+	} @else {
+		cursor: default;
+	}
+
+
+	@if $style == 'solid' {
+		background: $gradient-button;
+		background-position: 5%;
+		background-size: 400% 400%;
+		border: 1px solid transparent;
+		color: $color-white;
+		transition: $transition-background;
+
+		@if $type == 'button' {
+			&:active,
+			&:hover {
+				background-position: 50%;
+			}
+
+			&:focus {
+				background-position: 100%;
+				border: 1px dashed $color-black;
+				outline: 0;
+			}
+		}
+	} @else if $style == 'outline' {
+		background: $color-white;
+		color: $color-black;
+
+		@if $type == 'button' {
+			&:hover,
+			&:active {
+				border: 1px solid $color-primary;
+				color: $color-primary;
+			} // &:hover, &:active
+
+			&:focus {
+				border: 1px dashed $color-tertiary;
+				color: $color-tertiary;
+				outline: 0;
+			} //  &:focus
+		}
+	} @else if $style == 'category' {
+		background: $color-white;
+		border: 1px solid $color-true-gray;
+		color: $color-true-gray;
+
+		@if $type == 'button' {
+			&:hover,
+			&:active {
+				border: 1px solid $color-primary;
+				color: $color-primary;
+			} // &:hover, &:active
+
+			&:focus {
+				border: 1px dashed $color-tertiary;
+				color: $color-tertiary;
+				outline: 0;
+			} //  &:focus
+		}
+	} @else if $style == 'twitter' {
+		background: $gradient-twitter;
+		background-position: 5%;
+		background-size: 400% 400%;
+		border: 1px solid transparent;
+		color: $color-white;
+		transition: $transition-background;
+
+		@if $type == 'button' {
+			&:active,
+			&:hover {
+				background-position: 50%;
+			}
+
+			&:focus {
+				background-position: 100%;
+				border: 1px dashed $color-black;
+				outline: 0;
+			}
+		}
+	} @else if $style == 'facebook' {
+		background: $gradient-facebook;
+		background-position: 5%;
+		background-size: 400% 400%;
+		border: 1px solid transparent;
+		color: $color-white;
+		transition: $transition-background;
+
+		@if $type == 'button' {
+			&:active,
+			&:hover {
+				background-position: 50%;
+			}
+
+			&:focus {
+				background-position: 100%;
+				border: 1px dashed $color-black;
+				outline: 0;
+			}
+		}
+	}
+}

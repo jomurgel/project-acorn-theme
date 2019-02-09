@@ -1,0 +1,110 @@
+//--------------------------------------------------------------
+// Comments
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Dependencies
+//-----------------------------------------
+@import './form-elements';
+@import './button';
+
+//-----------------------------------------
+// Mixins
+//-----------------------------------------
+@mixin comments() {
+
+	//-----------------------------------------
+	// Wrapper
+	//-----------------------------------------
+	.comments-area {
+		@include margin($spacing 0);
+
+		.comments-title {
+			@include margin(0 null $gutter);
+		}
+
+		.required {
+			color: $color-primary;
+		}
+
+		.comment-list {
+			@include margin(0);
+			@include padding(0);
+
+			list-style: none;
+
+			// li.
+			.comment {
+				@include margin(null null $gutter);
+
+				position: relative;
+
+				> article {
+					margin-bottom: $gutter / 2;
+				}
+
+				.comment-meta .author,
+				.comment-footer {
+					align-items: center;
+					display: flex;
+				}
+
+				.comment-meta {
+					margin-bottom: $gutter / 3;
+
+					.author {
+
+						> img {
+							margin-right: 20px;
+						}
+
+						&-name {
+							font-weight: 600;
+						}
+					}
+				}
+
+				.comment-footer {
+					justify-content: flex-end;
+
+					.date {
+						color: $color-mid-gray;
+						font-size: 90%;
+						font-weight: 600;
+					}
+
+					.reply {
+						margin-left: 20px;
+
+						.comment-reply-link {
+							color: $color-mid-gray;
+							font-size: 90%;
+							font-style: normal;
+							font-weight: 600;
+							text-decoration: none;
+						}
+					}
+				}
+
+				.children {
+					border-left: 2px solid $color-mid-gray;
+					list-style: none;
+
+					.children {
+						border: 0;
+						padding: 0;
+
+						&::before {
+							@include position(absolute, 50% null null -40px);
+							@include size(20px, 2px);
+
+							background-color: $color-mid-gray;
+							content: '';
+							transform: translateY(-50%);
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,184 @@
+//--------------------------------------------------------------
+// Typographic Elements
+//--------------------------------------------------------------
+
+//-----------------------------------------
+// Import Dependencies
+//-----------------------------------------
+@import url(https://fonts.googleapis.com/css?family=Nunito+Sans:300,600);
+
+//-----------------------------------------
+// Global Type Treatments
+//-----------------------------------------
+body,
+button,
+input,
+select,
+textarea,
+p {
+	color: $color-black;
+	font-family: 'Nunito Sans', sans-serif;
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 1.625;
+
+	@include media($tablet-small) {
+		font-size: 20px;
+		line-height: 1.8;
+	}
+} // body, button, input, select, textarea
+
+//-----------------------------------------
+// Headings
+//-----------------------------------------
+
+@for $i from 1 through 6 {
+	h#{$i},
+	.h#{$i} {
+		font-weight: 600;
+		margin-top: 0;
+
+		a {
+			color: inherit;
+			text-decoration: none;
+		} // a
+	} // h#{$i}
+} // end @for
+
+h1,
+.h1 {
+	font-size: 48px;
+	line-height: 1.125;
+	margin-top: 0;
+
+	@include media($tablet-small) {
+		font-size: 60px;
+	}
+
+	&.page-title {
+		@include margin(0 0 $gutter);
+
+		@include media($tablet-small) {
+			@include margin(0 0 $spacing);
+		}
+
+		.not-found & {
+
+			@include margin(0 0 $gutter / 2);
+
+			@include media($tablet-small) {
+				@include margin(0 0 $gutter / 2);
+			}
+		}
+	}
+} // h1, .h1
+
+h2,
+.h2 {
+	font-size: 36px;
+	line-height: 1.042;
+
+	@include media($tablet-small) {
+		font-size: 48px;
+	}
+} // h2, .h2
+
+h3,
+.h3 {
+	font-size: 28px;
+	line-height: 1.125;
+
+	@include media($tablet-small) {
+		font-size: 32px;
+	}
+} // h3, .h3
+
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 1.125;
+
+	@include media($tablet-small) {
+		font-size: 24px;
+	}
+} // h4, .h4, h5, .h5, h6, .h6
+
+//-----------------------------------------
+// Copy
+//-----------------------------------------
+p,
+address {
+	@include margin(0 0 $gutter / 2);
+
+	// Remove margin from last paragraph in element.
+	&:last-child {
+		@include margin(0);
+	} // &:last-child
+
+	> img {
+		float: left;
+		margin-bottom: $gutter / 3;
+		margin-right: $gutter / 3;
+	}
+}
+
+b,
+strong {
+	font-weight: 600;
+} // b, strong
+
+dfn,
+cite,
+em,
+i {
+	font-style: italic;
+} // dfn, cite, em, i
+
+blockquote,
+q {
+	@extend h3;
+	@include margin(0 0 $gutter / 2);
+
+	border-left: 2px solid $color-dark-gray;
+	color: $color-true-gray;
+	font-style: italic;
+	font-weight: 300;
+}
+
+code,
+kbd,
+pre,
+samp,
+tt,
+var {
+	@include margin(0 0 $gutter / 2);
+	@include padding($gutter / 3);
+
+	background-color: $color-light-gray;
+	border: 1px solid $color-mid-gray;
+	border-radius: $radius;
+	color: $color-dark-gray;
+	font-family: Menlo, Consolas, 'Roboto Mono', 'Ubuntu Monospace', 'Noto Mono', 'Oxygen Mono', 'Liberation Mono', monospace;
+	overflow: auto;
+	white-space: pre-wrap;
+	word-break: normal;
+	word-wrap: break-word;
+} // pre
+
+//-----------------------------------------
+// Lists
+//-----------------------------------------
+ul,
+ol {
+	@include margin(0 0 $gutter / 1.5);
+	@include padding(0 0 0 $gutter / 3);
+
+	@include media($tablet-small) {
+		@include padding(0 0 0 $gutter / 2);
+	}
+}
