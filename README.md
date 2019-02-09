@@ -5,9 +5,9 @@
 
 An optinionated theme for [WordPress](https://wordpress.org).
 
-**Requires at least:** 4.0  
-**Tested up to:** 5.0.2  
-**Stable tag:** 1.0.0  
+**Requires at least:** 4.0\
+**Tested up to:** 5.0.2\
+**Stable tag:** 1.0.0
 
 ## Welcome
 This theme was built as a launching point for discussion around what is necessary for the web, how we can improve basic functionality of a WordPress theme, and how we can potentially improve performance all around with some modification of how we approach our script and styles.
