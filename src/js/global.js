@@ -1,6 +1,5 @@
 import { initMenu } from './util/menu';
 import { initSearch } from './util/search';
-import lozad from 'lozad';
 
 /**
  * Init Menu JS.
