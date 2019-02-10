@@ -58,6 +58,16 @@ body {
 
 	@include media($tablet-large) {
 		@include padding($gutter);
+
+		.nav-is-visible & {
+			@include padding(0);
+
+			background-color: transparent;
+			min-height: 0;
+			right: $gutter;
+			top: $gutter;
+			width: calc(100% - #{$spacing * 3});
+		}
 	}
 
 	// Set position and init of overlay.
@@ -77,20 +87,39 @@ body {
 	// Style primary navigation.
 	> ul {
 		@include padding($gutter * 1.667 $gutter / 3 $gutter / 3);
+		@include position(absolute, 50% null null 0);
 
-		left: 0;
 		margin: 0;
-		position: absolute;
-		top: 50%;
 		transform: translateY(-50%);
 		width: 100%;
 
 		@include media($tablet-large) {
 			@include padding(0 $gutter $gutter);
+
+			.nav-is-visible & {
+				@include padding(0);
+				@include position(relative, 0 0 0 0);
+
+				text-align: right;
+				transform: none;
+				width: auto;
+			}
 		}
 
 		li {
 			text-align: right;
+
+			@include media($tablet-large) {
+
+				.nav-is-visible & {
+					display: inline-block;
+					margin-left: 20px;
+a
+					&:first-child {
+						margin-left: 0;
+					}
+				}
+			}
 
 			//-----------------------------------------
 			// Current Pages
@@ -108,6 +137,10 @@ body {
 
 				display: inline-block;
 				margin-bottom: 10px;
+
+				.nav-is-visible & {
+					margin-bottom: 0;
+				}
 			}
 
 			.sub-menu {
@@ -135,6 +168,10 @@ body {
 
 	@include media($tablet-large) {
 		@include position(fixed, $gutter $gutter null null);
+
+		.nav-is-visible & {
+			display: none;
+		}
 	}
 
 	// Adjust the position of the menu when the admin bar is present.
