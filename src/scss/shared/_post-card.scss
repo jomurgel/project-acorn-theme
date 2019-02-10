@@ -42,6 +42,12 @@
 					border-bottom: 1px solid $color-light-gray;
 					margin-bottom: $gutter;
 					padding-bottom: $gutter;
+
+					&:only-child {
+						border-bottom: 0;
+						margin-bottom: 0;
+						padding-bottom: 0;
+					}
 				}
 			}
 		}
