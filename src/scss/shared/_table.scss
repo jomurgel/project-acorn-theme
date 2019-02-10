@@ -4,7 +4,7 @@
 //-----------------------------------------
 // Tables
 //-----------------------------------------
-table {
+table.wp-block-table {
 	@include margin(0 0 $gutter / 2);
 
 	border-collapse: collapse;
