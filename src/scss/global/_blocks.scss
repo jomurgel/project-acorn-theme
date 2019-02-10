@@ -25,6 +25,7 @@ p {
 	@include alignments;
 	@include margin($gutter / 2 null $gutter);
 
+	border-radius: $radius;
 	display: inline-flex;
 
 	//-----------------------------------------
@@ -35,7 +36,7 @@ p {
 		background-position: 0 0;
 
 		@include media($tablet-large) {
-			background-position: calc(50vw - #{$gutter}) 0;
+			background-position: 50% 50%;
 		}
 	}
 
