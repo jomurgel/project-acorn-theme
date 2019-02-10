@@ -158,7 +158,6 @@ q {
 	font-weight: 300;
 }
 
-code,
 kbd,
 pre,
 samp,
@@ -177,6 +176,16 @@ var {
 	word-break: normal;
 	word-wrap: break-word;
 } // pre
+
+code {
+	@include padding(1px 4px);
+
+	background-color: $color-light-gray;
+	border: 1px solid $color-mid-gray;
+	border-radius: $radius;
+	color: $color-dark-gray;
+	font-family: Menlo, Consolas, 'Roboto Mono', 'Ubuntu Monospace', 'Noto Mono', 'Oxygen Mono', 'Liberation Mono', monospace;
+}
 
 //-----------------------------------------
 // Lists
