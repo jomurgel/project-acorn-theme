@@ -9,8 +9,14 @@ import {
  * Add event from js the keep the marup clean
  */
 export const initSearch = () => {
-  const body         = document.getElementsByTagName( 'body' )[0];
+
   const searchToggle = document.getElementById( 'search-toggle' );
+
+  if ( null === searchToggle ) {
+    return;
+  }
+
+  const body         = document.getElementsByTagName( 'body' )[0];
   const search       = document.getElementById( 'search-form-container' );
 
   // Handle search toggle button.
