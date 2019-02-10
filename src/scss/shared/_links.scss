@@ -20,7 +20,6 @@
 		} //  &:focus
 	} @else if $type == 'mono' {
 		color: $color-mid-gray;
-		font-style: italic;
 
 		&:hover,
 		&:active {
@@ -33,7 +32,6 @@
 		} //  &:focus
 	} @else {
 		color: $color-primary;
-		font-style: italic;
 		text-decoration: underline;
 
 		&:hover,
