@@ -31,7 +31,9 @@ a:visited {
 // Screen Reader Elements
 // Text only meant for screen readers.
 //-----------------------------------------
-a.screen-reader-text {
+a.screen-reader-text,
+div.screen-reader-text,
+span.screen-reader-text {
 	@include padding(15px);
 	@include position(absolute, 0 null null -999px);
 	@include size(0, 0);
