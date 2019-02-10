@@ -305,7 +305,7 @@ function display_read_more() {
 
 	// Construct markup.
 	echo sprintf(
-		'<div class="read-more"><a href="%1$s" rel="bookmark" aria-label="%2$s">%3$s</a></div>', esc_url( get_the_permalink() ), esc_html__( 'Continue Reading ', 'acorn-theme' ) . esc_html( get_the_title() ), esc_html__( '. . .', 'acorn-theme' )
+		'<p class="read-more"><a href="%1$s" rel="bookmark" aria-label="%2$s">%3$s</a></p>', esc_url( get_the_permalink() ), esc_html__( 'Continue Reading ', 'acorn-theme' ) . esc_html( get_the_title() ), esc_html__( '. . .', 'acorn-theme' )
 	);
 }
 
