@@ -258,3 +258,17 @@ function get_new_content( $content ) {
 	return $content;
 }
 add_filter( 'the_content', 'AcornTheme\Functions\get_new_content', 20 );
+
+if ( defined( 'WPSEO_VERSION' ) ) {
+	/**
+	 * Move Yoast to bottom, below all elements
+	 *
+	 * @package Acorn_Theme
+	 * @since 1.0.0
+	 * @return string 'low' set value.
+	 */
+	function move_yoast_to_bottom() {
+		return 'low';
+	}
+	add_filter( 'wpseo_metabox_prio', 'AcornTheme\Functions\move_yoast_to_bottom' );
+}
