@@ -22,8 +22,8 @@ svg {
 // Links
 // Ignore admin bar.
 //-----------------------------------------
-a:not(.ab-item),
-a:visited {
+a:not(.ab-item):not(.button):not(.wp-block-button__link),
+a:not(.ab-item):not(.button):not(.wp-block-button__link):visited {
 	@include links;
 } // a
 
