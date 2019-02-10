@@ -125,6 +125,11 @@ address {
 		margin-bottom: $gutter / 3;
 		margin-right: $gutter / 3;
 	}
+
+	// Drop cap styles.
+	&.has-drop-cap:not(:focus)::first-letter {
+		font-size: 80px;
+	}
 }
 
 hr {
