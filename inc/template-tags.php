@@ -318,6 +318,11 @@ function display_read_more() {
  */
 function display_numeric_pagination( $args = array() ) {
 
+	// Bail if we don't have any pagination.
+	if ( ! is_paged() ) {
+		return;
+	}
+
 	// Set defaults.
 	$defaults = array(
 		'mid_size'  => 4,
