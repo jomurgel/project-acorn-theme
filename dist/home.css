@@ -488,7 +488,7 @@ address {
 
 hr {
   margin: 0 auto 2.313rem;
-  background-color: #f1f6fa;
+  border: 1px solid #f1f6fa;
   max-width: 50%; }
 
 b,
@@ -557,7 +557,9 @@ a:visited {
     color: #900aaa;
     outline: 1px dashed #010101; }
 
-a.screen-reader-text {
+a.screen-reader-text,
+div.screen-reader-text,
+span.screen-reader-text {
   padding: 0.938rem;
   position: absolute;
   top: 0;
@@ -568,7 +570,9 @@ a.screen-reader-text {
   overflow: hidden;
   text-decoration: none;
   z-index: -999; }
-  a.screen-reader-text:focus {
+  a.screen-reader-text:focus,
+  div.screen-reader-text:focus,
+  span.screen-reader-text:focus {
     height: auto;
     width: auto;
     background-color: white;
@@ -664,7 +668,7 @@ body.menu-open {
   background-color: transparent;
   border: 0;
   cursor: pointer;
-  outline: 1px solid transparent;
+  padding: 0;
   -webkit-transition: outline 0.2s ease-in-out;
   transition: outline 0.2s ease-in-out;
   z-index: 501; }
@@ -825,7 +829,6 @@ body.search-open .search-form-container {
   width: 37.5px;
   border: 0;
   cursor: pointer;
-  opacity: 1;
   outline: 1px solid transparent;
   -webkit-transition: outline 0.2s ease-in-out, opacity 0.2s ease-in-out;
   transition: outline 0.2s ease-in-out, opacity 0.2s ease-in-out;
