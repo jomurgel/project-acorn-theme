@@ -46,6 +46,10 @@ function customize_register( $wp_customize ) {
 		'selector' => '.site-title a',
 	) );
 
+	$wp_customize->selective_refresh->add_partial( 'nav_toggle', array(
+		'selector' => '.primary',
+	) );
+
 	$wp_customize->selective_refresh->add_partial( 'search_toggle', array(
 		'selector' => '.search-toggle',
 	) );
@@ -87,9 +91,9 @@ function customize_register( $wp_customize ) {
 
 	// Search toggle section.
 	$wp_customize->add_section(
-		'acorn_theme_search_section',
+		'acorn_theme_theme_options',
 		array(
-			'title'      => __( 'Search', 'acorn-theme' ),
+			'title'      => __( 'Theme Options', 'acorn-theme' ),
 			'priority'   => 140,
 			'capability' => 'edit_theme_options',
 		)
@@ -112,7 +116,28 @@ function customize_register( $wp_customize ) {
 		array(
 			'type'    => 'checkbox',
 			'label'   => __( 'Show Search Button and Form Globally?', 'acorn-theme' ),
-			'section' => 'acorn_theme_search_section',
+			'section' => 'acorn_theme_theme_options',
+		)
+	);
+
+	// Add section.
+	$wp_customize->add_setting(
+		'nav_toggle',
+		array(
+			'default'               => true,
+			'type'                  => 'theme_mod',
+			'capability'            => 'edit_theme_options',
+			'sanitization_callback' => 'wp_filter_post_kses',
+		)
+	);
+
+	// Add field type.
+	$wp_customize->add_control(
+		'nav_toggle',
+		array(
+			'type'    => 'checkbox',
+			'label'   => __( 'Hide nav in off-screen drawer?', 'acorn-theme' ),
+			'section' => 'acorn_theme_theme_options',
 		)
 	);
 
