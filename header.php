@@ -40,6 +40,7 @@ use function AcornTheme\Functions\display_search_toggle;
 					'menu_id'        => 'primary-navigation',
 					'menu_class'     => 'menu primary-menu',
 					'container'      => '',
+					'depth'          => 1,
 				) );
 				?>
 			</nav><!-- #primary -->
