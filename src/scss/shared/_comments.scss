@@ -17,7 +17,10 @@
 	// Wrapper
 	//-----------------------------------------
 	.comments-area {
-		@include margin($spacing 0);
+		@include margin($gutter 0);
+
+		border-top: 1px solid $color-light-gray;
+		padding-top: $spacing;
 
 		.comments-title {
 			@include margin(0 null $gutter);
