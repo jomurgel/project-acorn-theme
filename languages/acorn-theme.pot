@@ -82,15 +82,19 @@ msgid "XL"
 msgstr ""
 
 #: ../functions.php:152
-msgid "Dark Gray"
+msgid "Primary Rose"
 msgstr ""
 
 #: ../functions.php:157
-msgid "Light Gray"
+msgid "Secondary Orange"
 msgstr ""
 
 #: ../functions.php:162
-msgid "White"
+msgid "Tertiary Plum"
+msgstr ""
+
+#: ../functions.php:167
+msgid "Accent Cerulean"
 msgstr ""
 
 #: ../header.php:26
