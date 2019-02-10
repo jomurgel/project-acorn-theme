@@ -15,10 +15,7 @@ use function AcornTheme\Functions\display_page_title;
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php
-	display_post_thumbnail();
-	display_page_title();
-	?>
+	<?php display_page_title(); ?>
 
 	<div class="post-content">
 		<?php the_content(); ?>
