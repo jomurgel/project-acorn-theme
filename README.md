@@ -6,7 +6,7 @@
 An optinionated theme for [WordPress](https://wordpress.org).
 
 **Requires at least:** 4.0\
-**Tested up to:** 5.0.2\
+**Tested up to:** 5.0.3\
 **Stable tag:** 1.0.0
 
 ## Welcome
