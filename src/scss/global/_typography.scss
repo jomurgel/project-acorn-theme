@@ -127,6 +127,13 @@ address {
 	}
 }
 
+hr {
+	@include margin(0 auto $gutter / 2);
+
+	border: 1px solid $color-light-gray;
+	max-width: 50%;
+}
+
 b,
 strong {
 	font-weight: 600;
@@ -143,6 +150,7 @@ blockquote,
 q {
 	@extend h3;
 	@include margin(0 0 $gutter / 2);
+	@include padding(0 0 0 $gutter / 2 );
 
 	border-left: 2px solid $color-dark-gray;
 	color: $color-true-gray;
