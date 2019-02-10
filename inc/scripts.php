@@ -19,9 +19,9 @@ function init_scripts() {
 	// Array of script locations.
 	$scripts = array(
 		'error'  => is_404(),
-		'home'   => ! is_home() && is_front_page(),
+		'home'   => is_front_page() && ! is_home(),
 		'index'  => is_home() || is_archive(),
-		'page'   => is_page(),
+		'page'   => is_page() && ! is_front_page(),
 		'search' => is_search(),
 		'single' => is_single(),
 	);
