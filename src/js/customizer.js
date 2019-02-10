@@ -22,6 +22,13 @@
 		} );
 	} );
 
+	// Nav Toggle
+	api( 'nav_toggle', ( value ) => {
+		value.bind( ( to ) => {
+			$( '.primary' ).text( to );
+		} );
+	} );
+
 	// Site title.
 	api( 'footer_copyright', ( value ) => {
 		value.bind( ( to ) => {
