@@ -560,7 +560,7 @@ function display_category_list() {
 	$categories = get_terms();
 
 	// Bail if we have no terms, or if we're on a list of pages we don't need it.
-	if ( ! $categories || is_search() || is_404()|| is_home() || is_front_page() ) {
+	if ( ! $categories || is_search() || is_404() || is_home() || is_front_page() ) {
 		return;
 	}
 	?>
