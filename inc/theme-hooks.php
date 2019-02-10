@@ -23,6 +23,11 @@ function body_classes( $classes ) {
 		$classes[] = 'page-' . basename( get_permalink() );
 	}
 
+	// Add class if we want to show nav.
+	if ( false === get_theme_mod( 'nav_toggle' ) ) {
+		$classes[] = 'nav-is-visible';
+	}
+
 	// Single post has featured image.
 	if ( is_singular() && has_post_thumbnail() ) {
 		$classes[] = 'has-featured-image';
