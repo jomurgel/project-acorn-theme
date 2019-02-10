@@ -20,7 +20,7 @@ use function AcornTheme\Functions\get_new_excerpt;
 
 	<?php
 	if ( is_sticky() && is_home() && ! is_paged() ) :
-		printf( '<span class="post-sticky">%s</span>', esc_html__( 'Featured', 'acorn-theme' ) );
+		printf( '<span class="post-sticky">%s</span>', esc_html__( 'Pinned', 'acorn-theme' ) );
 	endif;
 	?>
 
