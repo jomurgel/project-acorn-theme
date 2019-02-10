@@ -92,6 +92,17 @@ body {
 		li {
 			text-align: right;
 
+			//-----------------------------------------
+			// Current Pages
+			//-----------------------------------------
+			&.current-menu-item,
+			&.current_page-item {
+
+				a {
+					font-weight: 600;
+				}
+			}
+
 			a {
 				@include links('dark');
 
