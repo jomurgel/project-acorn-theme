@@ -133,7 +133,7 @@ function setup() {
 			array(
 				'name'      => __( 'Large', 'acorn-theme' ),
 				'shortName' => __( 'L', 'acorn-theme' ),
-				'size'      => 32,
+				'size'      => 28,
 				'slug'      => 'large',
 			),
 			array(
@@ -149,19 +149,24 @@ function setup() {
 	add_theme_support( 'editor-color-palette',
 		array(
 			array(
-				'name'  => __( 'Dark Gray', 'acorn-theme' ),
-				'slug'  => 'dark-gray',
-				'color' => '#111',
+				'name'  => __( 'Primary Rose', 'acorn-theme' ),
+				'slug'  => 'primary-rose',
+				'color' => 'rgba(215, 4, 107, 1)',
 			),
 			array(
-				'name'  => __( 'Light Gray', 'acorn-theme' ),
-				'slug'  => 'light-gray',
-				'color' => '#767676',
+				'name'  => __( 'Secondary Orange', 'acorn-theme' ),
+				'slug'  => 'secondary-orange',
+				'color' => 'rgba(254, 79, 69, 1)',
 			),
 			array(
-				'name'  => __( 'White', 'acorn-theme' ),
-				'slug'  => 'white',
-				'color' => '#FFF',
+				'name'  => __( 'Tertiary Plum', 'acorn-theme' ),
+				'slug'  => 'Tertiary Plum',
+				'color' => 'rgba(144, 10, 170, 1)',
+			),
+			array(
+				'name'  => __( 'Accent Cerulean', 'acorn-theme' ),
+				'slug'  => 'Accent Cerulean',
+				'color' => 'rgba(49, 191, 199, 1)',
 			),
 		)
 	);
