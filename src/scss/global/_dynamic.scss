@@ -20,10 +20,10 @@ svg {
 
 //-----------------------------------------
 // Links
-// Ignore admin bar.
+// Only styles inside paragraphs.
 //-----------------------------------------
-a:not(.ab-item):not(.button):not(.wp-block-button__link),
-a:not(.ab-item):not(.button):not(.wp-block-button__link):visited {
+p a,
+p a:visited {
 	@include links;
 } // a
 
