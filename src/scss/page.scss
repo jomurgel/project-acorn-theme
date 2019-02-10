@@ -8,3 +8,11 @@
 @import './global';
 @import './shared/table';
 @import './shared/embeds';
+@import './shared/post-content';
+
+//-----------------------------------------
+// Post Content
+//-----------------------------------------
+.post-single {
+	@include post-content;
+}
