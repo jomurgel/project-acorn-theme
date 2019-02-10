@@ -829,7 +829,6 @@ body.search-open .search-form-container {
   width: 37.5px;
   border: 0;
   cursor: pointer;
-  outline: 1px solid transparent;
   -webkit-transition: outline 0.2s ease-in-out, opacity 0.2s ease-in-out;
   transition: outline 0.2s ease-in-out, opacity 0.2s ease-in-out;
   z-index: 511; }
