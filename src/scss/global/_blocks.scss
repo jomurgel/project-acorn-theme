@@ -94,6 +94,30 @@ pre.wp-block-verse {
 }
 
 //-----------------------------------------
+// Code block + Highlighting — extension.
+//-----------------------------------------
+/* stylelint-disable */
+.wp-block-code,
+.wp-block-code[class*="language-"] {
+	@include alignments;
+	@include margin(0 null $gutter / 2);
+	@include padding($gutter / 3);
+
+	// Reset code styles.
+	code {
+		background-color: transparent;
+		border: none;
+		border-radius: 0;
+		color: inherit;
+		font-family: inherit;
+		font-size: 16px;
+		line-height: 1.5;
+		padding: 0;
+	}
+}
+/* stylelint-enable */
+
+//-----------------------------------------
 // Separator
 //-----------------------------------------
 .wp-block-separator {
