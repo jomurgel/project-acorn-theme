@@ -119,27 +119,27 @@ function setup() {
 	add_theme_support( 'editor-font-sizes',
 		array(
 			array(
-				'name'      => __( 'Small', 'acorn-theme' ),
-				'shortName' => __( 'S', 'acorn-theme' ),
-				'size'      => 18,
+				'name'      => __( 'Small', 'jo-theme' ),
+				'shortName' => __( 'S', 'jo-theme' ),
+				'size'      => 17,
 				'slug'      => 'small',
 			),
 			array(
-				'name'      => __( 'Normal', 'acorn-theme' ),
-				'shortName' => __( 'M', 'acorn-theme' ),
+				'name'      => __( 'Normal', 'jo-theme' ),
+				'shortName' => __( 'M', 'jo-theme' ),
 				'size'      => 20,
 				'slug'      => 'normal',
 			),
 			array(
-				'name'      => __( 'Large', 'acorn-theme' ),
-				'shortName' => __( 'L', 'acorn-theme' ),
+				'name'      => __( 'Large', 'jo-theme' ),
+				'shortName' => __( 'L', 'jo-theme' ),
 				'size'      => 28,
 				'slug'      => 'large',
 			),
 			array(
-				'name'      => __( 'Huge', 'acorn-theme' ),
-				'shortName' => __( 'XL', 'acorn-theme' ),
-				'size'      => 48,
+				'name'      => __( 'Huge', 'jo-theme' ),
+				'shortName' => __( 'XL', 'jo-theme' ),
+				'size'      => 42,
 				'slug'      => 'huge',
 			),
 		)
