@@ -61,6 +61,16 @@ p {
 }
 
 //-----------------------------------------
+// Spacer
+//-----------------------------------------
+.wp-block-spacer {
+	@include margin(0 auto $gutter / 2);
+
+	background-color: $color-light-gray;
+	width: 50%;
+}
+
+//-----------------------------------------
 // Gallery & Embeds
 //-----------------------------------------
 .wp-block-gallery,
