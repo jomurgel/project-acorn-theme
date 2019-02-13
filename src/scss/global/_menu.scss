@@ -56,6 +56,16 @@ body {
 	width: $menu-width;
 	z-index: 500;
 
+	// Adjust the position of the menu when the admin bar is present.
+	.admin-bar.nav-is-visible & {
+
+		top: calc(#{$gutter} + 46px);
+
+		@include media($tablet-large) {
+			top: calc(#{$gutter} + 32px);
+		}
+	}
+
 	@include media($tablet-large) {
 		@include padding($gutter);
 
