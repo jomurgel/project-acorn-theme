@@ -49,38 +49,6 @@ msgstr ""
 msgid "Social Menu"
 msgstr ""
 
-#: ../functions.php:122
-msgid "Small"
-msgstr ""
-
-#: ../functions.php:123
-msgid "S"
-msgstr ""
-
-#: ../functions.php:128
-msgid "Normal"
-msgstr ""
-
-#: ../functions.php:129
-msgid "M"
-msgstr ""
-
-#: ../functions.php:134
-msgid "Large"
-msgstr ""
-
-#: ../functions.php:135
-msgid "L"
-msgstr ""
-
-#: ../functions.php:140
-msgid "Huge"
-msgstr ""
-
-#: ../functions.php:141
-msgid "XL"
-msgstr ""
-
 #: ../functions.php:152
 msgid "Primary Rose"
 msgstr ""
