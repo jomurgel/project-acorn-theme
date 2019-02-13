@@ -35,7 +35,7 @@ p {
 .wp-block-image,
 .wp-block-cover {
 	@include alignments;
-	@include margin($gutter / 2 null $gutter);
+	@include margin($gutter / 2 null $gutter / 2);
 
 	border-radius: $radius;
 	display: inline-flex;
