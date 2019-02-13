@@ -66,7 +66,7 @@ p {
 .wp-block-gallery,
 .wp-block-embed {
 	@include alignments;
-	@include margin(0 null $gutter);
+	@include margin(0 null $gutter / 2);
 }
 
 //-----------------------------------------
