@@ -97,7 +97,7 @@ body {
 			@include padding(0 $gutter $gutter);
 
 			.nav-is-visible & {
-				@include padding(0);
+				@include padding(1px);
 				@include position(relative, 0 0 0 0);
 
 				text-align: right;
