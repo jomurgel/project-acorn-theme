@@ -12,6 +12,12 @@ export const initMenu = () => {
   const body       = document.getElementsByTagName( 'body' )[0];
   const menuToggle = document.getElementById( 'menu-toggle' );
   const menu       = document.getElementById( 'primary' );
+
+  // Return if no menu exists.
+  if ( null === menu ) {
+    return;
+  }
+
   const menuLinks  = document.getElementById( 'primary' ).getElementsByTagName( 'a' );
 
   setTabIndex( menuLinks, '-1' );
