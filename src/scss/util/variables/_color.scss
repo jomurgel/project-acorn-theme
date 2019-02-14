@@ -38,13 +38,13 @@ $color-dark-gray:  rgba(42, 55, 64, 1);
 //-----------------------------------------
 
 // Primary;
-$gradient-primary:   linear-gradient($angle, rgba(254, 79, 69, 1), rgba(215, 4, 107, 1));
+$gradient-primary:   linear-gradient($angle, $color-secondary, $color-primary);
 
 // Secondary.
-$gradient-secondary: linear-gradient($angle, rgba(215, 4, 107, 1), rgba(144, 10, 170, 1));
+$gradient-secondary: linear-gradient($angle, $color-primary, $color-tertiary);
 
 // Accent.
-$gradient-accent:    linear-gradient($angle, rgba(49, 191, 199, 1), rgba(179, 48, 205, 1));
+$gradient-accent:    linear-gradient($angle, $color-tertiary, $color-tertiary);
 
 // Buttons
 $gradient-button:    linear-gradient($angle, $color-primary, $color-secondary, $color-tertiary, $color-accent);
