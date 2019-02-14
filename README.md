@@ -78,6 +78,22 @@ Drill down into the new theme and install all the dependencies.
 $ cd acorn-theme
 $ npm install
 ```
+If you're using [VSCode](https://code.visualstudio.com/) I might also suggest a Workspace settings that look like this:
+``` json
+{
+	// The name or path of the coding standard to use. Defaults to the one set in phpcs global config.
+	"phpcs.standard": "WordPress",
+
+	"phpcbf.standard": "WordPress",
+
+	"sasslint.enable": false,
+
+	// ESLint Configuration.
+	"eslint.options"     : {
+		"configFile": "../.eslintrc"
+	},
+}
+```
 
 ### Using Acorn Theme as your own starter theme
 At this time, if you want to use the `Acorn Theme` as a starter theme, you'll want to replace all occurances of the following with your theme name throughout:
