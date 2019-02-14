@@ -29,6 +29,7 @@ I've built an opinionated WordPress theme with the following features:
 
 ### Opinionated Elements
 These are all the basics, but what makes it more opinionated are the following key features.
+- IE11 is not supported. I didn't go out of my way to avoid IE11, but I did not build it with IE11 support in mind. It's about time we give up on trying to accomodate an older, outdated, and potentially unsecure browser.
 - SVGs are controlled inline via the [inc/social-icons.php](https://github.com/jomurgel/project-acorn-theme/blob/master/inc/social-icons.php) file. No need to worry about an external or inlined svg file.
 - The [inc/scripts.php](https://github.com/jomurgel/project-acorn-theme/blob/master/inc/scripts.php) file enqueues scripts and styles based on the location desired. No longer needing to load everything on every page all the time. Entrypoints handled in the [webpack.config.js](https://github.com/jomurgel/project-acorn-theme/blob/master/webpack.config.js) file. Only load what you need for that page, both styles and javascript.
 - Nesting depth of the navigations are limited to 1. No more dropdowns. I believe that if your data architecture is properly considered, you won't need it. This helps us be a little bit more a thoughtful with our pages.
