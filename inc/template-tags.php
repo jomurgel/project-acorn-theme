@@ -583,7 +583,7 @@ function display_category_list() {
 			?>
 
 			<li class="term <?php echo esc_attr( $term->slug ); ?>">
-				<a href="<?php echo esc_url( get_permalink( $term->term_id ) ); ?>">
+				<a href="<?php echo esc_url( get_category_link( $term->term_id ) ); ?>">
 					<?php echo wp_kses_post( $term->name . ' <span>' . $term->count . '</span>' ); ?>
 				</a>
 			</li>
