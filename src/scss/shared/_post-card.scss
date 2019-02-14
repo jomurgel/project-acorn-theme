@@ -65,7 +65,9 @@
 		&-header {
 			@include margin(0 0 $thumb-margin);
 
-			align-items: center;
+			@include media($tablet-small) {
+				align-items: center;
+			}
 		}
 
 		// Thumbnail
@@ -78,6 +80,10 @@
 
 			@include media($tablet-small) {
 				@include margin(0 $thumb-margin 0 0);
+			}
+
+			> a {
+				display: block;
 			}
 
 			img {
