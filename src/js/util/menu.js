@@ -20,7 +20,11 @@ export const initMenu = () => {
 
   const menuLinks  = document.getElementById( 'primary' ).getElementsByTagName( 'a' );
 
-  setTabIndex( menuLinks, '-1' );
+  if ( hasClass( body, 'nav-is-visible' ) ) {
+    setTabIndex( menuLinks, '0' );
+  } else {
+    setTabIndex( menuLinks, '-1' );
+  }
 
   // Handle menu toggle button.
   menuToggle.addEventListener( 'click', toggleMenu );
