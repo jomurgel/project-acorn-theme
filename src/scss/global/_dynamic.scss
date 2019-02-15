@@ -49,6 +49,7 @@ span.screen-reader-text {
 		background-color: $color-white;
 		color: $color-black;
 		left: 0;
+		outline: 1px dashed $color-black;
 		top: 0;
 		z-index: 999;
 	}
