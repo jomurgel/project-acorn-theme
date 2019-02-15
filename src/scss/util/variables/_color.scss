@@ -44,7 +44,7 @@ $gradient-primary:   linear-gradient($angle, $color-secondary, $color-primary);
 $gradient-secondary: linear-gradient($angle, $color-primary, $color-tertiary);
 
 // Accent.
-$gradient-accent:    linear-gradient($angle, $color-tertiary, $color-tertiary);
+$gradient-accent:    linear-gradient($angle, $color-accent, $color-tertiary);
 
 // Buttons
 $gradient-button:    linear-gradient($angle, $color-primary, $color-secondary, $color-tertiary, $color-accent);
