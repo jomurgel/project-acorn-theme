@@ -47,6 +47,19 @@ export const initMenu = () => {
       toggleMenu();
     }
   });
+
+  // Handle resize.
+  window.addEventListener( 'resize', ( event ) => {
+    const windowWidth = window.innerWidth;
+
+    // If we have an open nav, and we're above the mobile breakpoint.
+    // Open nav.
+    if ( hasClass( body, 'nav-is-visible' ) && 1024 < windowWidth ) {
+      removeClass( body, 'menu-open' );
+      setAriaHidden( 'primary', 'true' );
+      setTabIndex( menuLinks, '-1' );
+    }
+  })
 };
 
 /**
