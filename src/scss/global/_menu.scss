@@ -58,8 +58,11 @@ body {
 
 	// Adjust the position of the menu when the admin bar is present.
 	.admin-bar.nav-is-visible & {
+		top: calc(46px);
 
-		top: calc(#{$gutter} + 46px);
+		@include media($wp-admin-bar) {
+			top: 32px;
+		}
 
 		@include media($tablet-large) {
 			top: calc(#{$gutter} + 32px);
@@ -194,8 +197,12 @@ body {
 	.admin-bar & {
 		@include position(fixed, $gutter / 2 + 46px $gutter / 2 null null);
 
+		@include media($wp-admin-bar) {
+			@include position(fixed, $gutter / 2 + 32px $gutter / 2 null null);
+		}
+
 		@include media($tablet-large) {
-			@include position(fixed, $gutter + 32px $gutter null null);
+			@include position(fixed, $gutter - 32px $gutter null null);
 		}
 	}
 
