@@ -59,7 +59,7 @@ export const initMenu = () => {
       setAriaHidden( 'primary', 'true' );
       setTabIndex( menuLinks, '-1' );
     }
-  })
+  });
 };
 
 /**
