@@ -47,8 +47,7 @@ figure,
 // Fix the admin bar on mobile.
 //-----------------------------------------
 #wpadminbar {
-	@include position(fixed, 0 null null 0);
-
+	position: fixed !important; // Required to overwrite WP core styles.
 	transition: $transition-menu;
 
 	@include media($wp-admin-bar) {
