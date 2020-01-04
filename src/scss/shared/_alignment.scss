@@ -40,3 +40,18 @@
 		}
 	}
 }
+
+@mixin reset-alignment {
+
+	&.alignwide,
+	&.alignfull {
+
+		@include media($tablet-large) {
+			left: 0;
+			margin-left: auto;
+			margin-right: auto;
+			right: 0;
+			width: 100%;
+		}
+	}
+}
