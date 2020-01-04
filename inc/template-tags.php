@@ -70,6 +70,12 @@ function display_relative_time( $args = array() ) {
 
 	$args = wp_parse_args( $args, $defaults );
 
+	// Bail if we don't have a timestamp, or timestamp is null.
+	// Mostly for previews.
+	if ( '@' === $args['timestamp'] ) {
+		return;
+	}
+
 	// Setup new time.
 	$now  = new \DateTime();
 	$ago  = new \DateTime( $args['timestamp'] );
