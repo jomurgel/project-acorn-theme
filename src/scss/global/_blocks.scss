@@ -39,6 +39,8 @@ p {
 
 	border-radius: $radius;
 	display: inline-flex;
+	flex-direction: column;
+	overflow: hidden;
 
 	//-----------------------------------------
 	// Paralax Effect
