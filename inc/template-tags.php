@@ -323,9 +323,11 @@ function display_read_more() {
  * @since 1.0.0
  */
 function display_numeric_pagination( $args = array() ) {
+	// Get query.
+	global $wp_query;
 
-	// Bail if we don't have any pagination.
-	if ( ! is_paged() ) {
+	// Bail if we don't have any pages to paginate.
+	if ( $wp_query->max_num_pages <= 1 ) {
 		return;
 	}
 
