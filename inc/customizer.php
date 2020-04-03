@@ -24,7 +24,7 @@ function customizer_preview_js() {
 		true
 	);
 }
-add_action( 'customize_preview_init', 'AcornTheme\Functions\customizer_preview_js' );
+add_action( 'customize_preview_init', __NAMESPACE__ . '\customizer_preview_js' );
 
 /**
  * Modify the $wp_customize object.
@@ -142,7 +142,7 @@ function customize_register( $wp_customize ) {
 	);
 
 }
-add_action( 'customize_register', 'AcornTheme\Functions\customize_register' );
+add_action( 'customize_register', __NAMESPACE__ . '\customize_register' );
 
 /**
  * Render the site title for the selective refresh partial.

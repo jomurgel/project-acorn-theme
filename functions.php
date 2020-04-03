@@ -171,7 +171,7 @@ function setup() {
 		)
 	);
 }
-add_action( 'after_setup_theme', 'AcornTheme\Functions\setup' );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -186,7 +186,7 @@ function content_width() {
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 	$GLOBALS['content_width'] = apply_filters( 'acorn_theme_content_width', 720 );
 }
-add_action( 'after_setup_theme', 'AcornTheme\Functions\content_width', 0 );
+add_action( 'after_setup_theme', __NAMESPACE__ . '\content_width', 0 );
 
 /**
  * Customizer Functions.

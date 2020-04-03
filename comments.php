@@ -53,7 +53,7 @@ if ( post_password_required() ) {
 				<?php
 					wp_list_comments( array(
 						'avatar_size' => 37,
-						'callback'    => 'AcornTheme\Functions\custom_comment_list',
+						'callback'    => __NAMESPACE__ . '\custom_comment_list',
 						'max_depth'   => 3,
 						'short_ping'  => true,
 						'style'       => 'ul',

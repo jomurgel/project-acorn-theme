@@ -35,7 +35,7 @@ function body_classes( $classes ) {
 
 	return $classes;
 }
-add_filter( 'body_class', 'AcornTheme\Functions\body_classes' );
+add_filter( 'body_class', __NAMESPACE__ . '\body_classes' );
 
 /**
  * Disable the "Cancel reply" link. It doesn't seem to work anyway, and it only makes the "Leave Reply" heading confusing.
@@ -58,7 +58,7 @@ function remove_front_end_jquery() {
 		wp_deregister_script( 'jquery' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'AcornTheme\Functions\remove_front_end_jquery' );
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\remove_front_end_jquery' );
 
 /**
  * Adds OG tags to the head for better social sharing.
@@ -195,7 +195,7 @@ function add_og_tags() {
 	<meta name="description" content="<?php echo esc_attr( $card_long_description ); ?>" />
 	<?php
 }
-add_action( 'wp_head', 'AcornTheme\Functions\add_og_tags' );
+add_action( 'wp_head', __NAMESPACE__ . '\add_og_tags' );
 
 /**
  * Removes or Adjusts the prefix on category archive page titles.
@@ -217,7 +217,7 @@ function remove_archive_title_prefix( $title ) {
 
 	return $title;
 }
-add_filter( 'get_the_archive_title', 'AcornTheme\Functions\remove_archive_title_prefix' );
+add_filter( 'get_the_archive_title', __NAMESPACE__ . '\remove_archive_title_prefix' );
 
 /**
  * Flush out the transients used in _s_categorized_blog.
@@ -235,8 +235,8 @@ function category_transient_flusher() {
 	// Like, beat it. Dig?
 	delete_transient( 'acorn_theme_categories' );
 }
-add_action( 'delete_category', 'AcornTheme\Functions\category_transient_flusher' );
-add_action( 'save_post', 'AcornTheme\Functions\category_transient_flusher' );
+add_action( 'delete_category', __NAMESPACE__ . '\category_transient_flusher' );
+add_action( 'save_post', __NAMESPACE__ . '\category_transient_flusher' );
 
 /**
  * Filters WYSIWYG content with the_content filter.
@@ -257,7 +257,7 @@ function get_new_content( $content ) {
 	// Returns the content.
 	return $content;
 }
-add_filter( 'the_content', 'AcornTheme\Functions\get_new_content', 20 );
+add_filter( 'the_content', __NAMESPACE__ . '\get_new_content', 20 );
 
 if ( defined( 'WPSEO_VERSION' ) ) {
 	/**
@@ -270,5 +270,5 @@ if ( defined( 'WPSEO_VERSION' ) ) {
 	function move_yoast_to_bottom() {
 		return 'low';
 	}
-	add_filter( 'wpseo_metabox_prio', 'AcornTheme\Functions\move_yoast_to_bottom' );
+	add_filter( 'wpseo_metabox_prio', __NAMESPACE__ . '\move_yoast_to_bottom' );
 }

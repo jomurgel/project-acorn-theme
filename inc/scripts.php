@@ -53,4 +53,4 @@ function init_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'AcornTheme\Functions\init_scripts' );
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\init_scripts' );

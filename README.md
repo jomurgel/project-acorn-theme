@@ -65,7 +65,7 @@ function add_social_icon( $social_icons ) {
 
   return wp_parse_args( $custom_icons, $social_icons );
 }
-add_filter( 'social_icons', 'AcornTheme\Functions\add_social_icon', 10, 1 );
+add_filter( 'social_icons', __NAMESPACE__ . '\add_social_icon', 10, 1 );
 ```
 
 ## Getting Started
