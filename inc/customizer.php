@@ -1,6 +1,6 @@
 <?php
 /**
- * Alcatraz Customizer functionality.
+ * Customizer functionality.
  *
  * @package Acorn_Theme
  * @since 1.0.0
