@@ -1,3 +1,20 @@
+# Must-use plugins.
+mu-plugins
+
+# Uploads.
+uploads
+/uploads
+
+# Composer
+/vendor
+
+# Dependencies
 node_modules/
+
+# IDE
 /.vscode
 .DS_Store
+
+# PHP
+debug.log
+/db.php
