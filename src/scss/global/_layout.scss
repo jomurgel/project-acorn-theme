@@ -12,19 +12,22 @@
 // Body
 //-----------------------------------------
 body {
-	@include margin($gutter / 3);
-
 	background-color: $color-white;
 	left: 0;
 	overflow-x: hidden;
 	position: relative;
 	transition: $transition-menu;
-	width: calc(100% - #{$gutter / 1.5});
 
-	@include media($tablet-large) {
-		@include margin($gutter);
+	&:not(.editor-styles-wrapper) {
+		@include margin($gutter / 3);
 
-		width: calc(100% - #{$gutter * 2});
+		width: calc(100% - #{$gutter / 1.5});
+
+		@include media($tablet-large) {
+			@include margin($gutter);
+
+			width: calc(100% - #{$gutter * 2});
+		}
 	}
 }
 
